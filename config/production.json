@@ -1,0 +1,56 @@
+{
+  "server": {
+    "port": 3001,
+    "host": "0.0.0.0",
+    "nodeEnv": "production"
+  },
+  "security": {
+    "rateLimiting": {
+      "enabled": true,
+      "windowMs": 900000,
+      "maxRequests": 100,
+      "walletMax": 20,
+      "miningMax": 10,
+      "transactionMax": 5
+    },
+    "cors": {
+      "allowedOrigins": ["https://yourdomain.com", "https://api.yourdomain.com"],
+      "credentials": true
+    },
+    "helmet": {
+      "enabled": true,
+      "hsts": {
+        "maxAge": 31536000,
+        "includeSubDomains": true,
+        "preload": true
+      }
+    }
+  },
+  "blockchain": {
+    "difficulty": 4,
+    "miningReward": 10,
+    "maxTransactionsPerBlock": 10000,
+    "blockTime": 2500
+  },
+  "database": {
+    "dataDir": "./data",
+    "backupInterval": 3600000,
+    "maxBackups": 10,
+    "compactInterval": 86400000
+  },
+  "network": {
+    "port": 6001,
+    "maxPeers": 50,
+    "heartbeatInterval": 30000
+  },
+  "logging": {
+    "level": "info",
+    "maxFiles": 10,
+    "maxSize": "10MB"
+  },
+  "monitoring": {
+    "enabled": true,
+    "metricsInterval": 60000,
+    "healthCheckInterval": 30000
+  }
+}
